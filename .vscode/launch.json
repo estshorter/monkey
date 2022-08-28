@@ -8,12 +8,13 @@
             "name": "Launch Package",
             "type": "go",
             "request": "launch",
-            // "mode": "auto",
-            "mode": "test",
-            "args": [
-                "-test.v",
-                "TestReturnStatements"
-            ],
+            "mode": "auto",
+            "console": "integratedTerminal",
+            // "mode": "test",
+            // "args": [
+            //     "-test.v",
+            //     "TestReturnStatements"
+            // ],
             "program": "${fileDirname}"
         }
     ]

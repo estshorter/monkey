@@ -57,6 +57,8 @@ func ExpandMacros(program ast.Node, env *object.Environment) ast.Node {
 
 		args := quoteArgs(callExpression)
 		evalEnv := extendMacroEnv(macro, args)
+		// 本当はここでmacro.Bodyのdeepcopyが必要
+		// unquote()を評価してしまうので、evalEnvのマクロの中からunquote()が消える＝定数のようになる
 		evaluated := Eval(macro.Body, evalEnv)
 
 		quote, ok := evaluated.(*object.Quote)
